@@ -18,10 +18,10 @@ pipeline {
 
         stage('Test Log') {
           environment {
-            LocalVariable = "Local test data new variable"
+            LocalVariable = 'Local test data new variable'
           }
           steps {
-            writeFile(file: 'TestLogFile.txt', text: "This is a test log file, Global Variable ${PaaSToken} and Local data: ${LocalVariable}")
+            writeFile(file: 'TestLogFile.txt', text: "This is a log file, Global Variable ${PaaSToken} and Local data: ${LocalVariable}")
           }
         }
 
@@ -29,6 +29,9 @@ pipeline {
     }
 
     stage('Deploy') {
+      when {
+        branch "master"
+      }
       parallel {
         stage('Deploy') {
           steps {
