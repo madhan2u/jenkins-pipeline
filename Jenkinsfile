@@ -12,6 +12,7 @@ pipeline {
         stage('Test') {
           steps {
             echo 'Testing the Application'
+            echo '"Bearer token is ${PaaSToken}"'
           }
         }
 
@@ -24,5 +25,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    PaaSToken = 'kafld3242345jl;23k5hl542lk52'
   }
 }
