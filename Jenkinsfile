@@ -18,7 +18,7 @@ pipeline {
 
         stage('Test Log') {
           environment {
-            LocalVariable = "Local test data variable"
+            LocalVariable = 'Local test data variable'
           }
           steps {
             writeFile(file: 'TestLogFile.txt', text: "This is a test log file, Global Variable ${PaaSToken} and Local data: ${LocalVariable}")
