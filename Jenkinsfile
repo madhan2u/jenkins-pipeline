@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
           steps {
             echo 'Testing the Application'
-            echo '"Bearer token is ${PaaSToken}"'
+            echo "Bearer token is ${PaaSToken}"
           }
         }
 
